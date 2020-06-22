@@ -750,7 +750,7 @@ function printOpeningTag(path, options, print) {
               : line
             : forceNotToBreakAttrContent
             ? ""
-            : (node.isSelfClosing || !isWhitespaceSensitiveNode(node) ? "" : softline),
+            : (isWhitespaceSensitiveNode(node) && !node.isSelfClosing ? softline : ""),
         ]),
     node.isSelfClosing ? "" : printOpeningTagEnd(node),
   ]);
