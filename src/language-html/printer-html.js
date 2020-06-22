@@ -35,6 +35,7 @@ const {
   isVueCustomBlock,
   isVueNonHtmlBlock,
   isScriptLikeTag,
+  isWhitespaceSensitiveNode,
   isTextLikeNode,
   preferHardlineAsLeadingSpaces,
   shouldNotPrintClosingTag,
@@ -749,7 +750,7 @@ function printOpeningTag(path, options, print) {
               : line
             : forceNotToBreakAttrContent
             ? ""
-            : softline,
+            : (node.isSelfClosing || isWhitespaceSensitiveNode(node) ? softline : ""),
         ]),
     node.isSelfClosing ? "" : printOpeningTagEnd(node),
   ]);
