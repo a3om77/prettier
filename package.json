@@ -56,7 +56,7 @@
     "leven": "3.1.0",
     "lines-and-columns": "1.1.6",
     "linguist-languages": "7.10.0",
-    "lodash": "4.17.15",
+    "lodash": "latest",
     "mem": "6.1.0",
     "minimatch": "3.0.4",
     "minimist": "1.2.5",
@@ -142,6 +142,6 @@
     "lint:deps": "node ./scripts/check-deps.js",
     "build": "node --max-old-space-size=3072 ./scripts/build/build.js",
     "build-docs": "node ./scripts/build-docs.js",
-    "fork:sync": "git fetch upstream && git fetch upstream && git merge upstream/master && git push origin master --force"
+    "fork:sync": "git fetch upstream && git merge upstream/master && git push origin master --force"
   }
 }
